@@ -10,14 +10,16 @@ class MyApp extends StatelessWidget {
     return MaterialApp(
       home: Scaffold(
         appBar: AppBar(title: Text('ClipOval Example')),
-        body: Center(
-          child: ClipOval(
-            child: Image.network(
-              'https://example.com/image.jpg',
-              width: 100.0, // ইমেজের প্রস্থ
-              height: 100.0, // ইমেজের উচ্চতা
-              fit: BoxFit.cover, // ইমেজের ফিটিং মোড
-            ),
+        body: FractionallySizedBox(   //FractionallySizedBox উইজেটটি একটি শিশুকে প্যারেন্টের কিছু শতাংশ প্রস্থ এবং উচ্চতা ব্যবহার করে সাইজ করে।
+          alignment: AlignmentDirectional.bottomEnd,
+          widthFactor: 0.5,
+          heightFactor: 0.5,
+          child: Container(
+            color: Colors.green,
+            width: 100,
+            height: 100,
+
+            child: Image.asset('assets/images/img1.jpg',fit: BoxFit.cover,),
           ),
         ),
       ),
