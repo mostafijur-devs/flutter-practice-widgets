@@ -11,18 +11,12 @@ class MyApp extends StatelessWidget {
       home: Scaffold(
         appBar: AppBar(title: Text('ClipOval Example')),
         body: Center(
-          child: ClipRect(
-
-            child: Align(
-              alignment: Alignment.center,
-              widthFactor: 10,
-              heightFactor: 10,
-              child: Image.asset(
-                'assets/images/img1.jpg',
-                width: 200.0,
-                height: 200.0,
-                fit: BoxFit.cover,
-              ),
+          child: ClipOval(
+            child: Image.network(
+              'https://example.com/image.jpg',
+              width: 100.0, // ইমেজের প্রস্থ
+              height: 100.0, // ইমেজের উচ্চতা
+              fit: BoxFit.cover, // ইমেজের ফিটিং মোড
             ),
           ),
         ),
